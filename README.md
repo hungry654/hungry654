@@ -1,8 +1,9 @@
 ## README 설명
+- github 링크
+  - https://github.com/hungry654/hungry654.github.io.git
 #### 과제 설명
 - 제작자: 20253043 하가인
 - 포트폴리오 형식의 홈페이지 만들기
-  -github 링크: 
 - 첫 화면은 main.html 파일
 - 자기 스킬 및 희망 직무 -> intro1.html
   - 자기 스킬: c 언어, html
