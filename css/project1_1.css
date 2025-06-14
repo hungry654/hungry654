@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f7fafd;
+}
+
+.scroll-section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40px 0;
+}
+
+.scroll-section img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  background: #fff;
+}

@@ -1,0 +1,119 @@
+body {
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  margin: 0;
+  padding: 0 40px;
+  background: #fff;
+  color: #111;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-top: 30px;
+  letter-spacing: 2px;
+}
+
+.divider {
+  margin: 30px 0;
+  border: none;
+  border-top: 2px solid #222;
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 70px;
+  padding-left: 50px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-right: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.profile-imges {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-right: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding-left: 50px;
+}
+
+.intro-text h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.goal-section, .study-section {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.goal-section {
+  border-right: 1px solid #bbb;
+}
+
+.goal-section h2, .study-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.goal-section p, .study-section p {
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.intro-text,
+.goal-section,
+.study-section {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.intro-text:hover,
+.goal-section:hover,
+.study-section:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .intro-section, .bottom-section {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .goal-section {
+      border-right: none;
+      border-bottom: 1px solid #bbb;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+  }
+}

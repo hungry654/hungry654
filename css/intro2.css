@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+/* 자기계발 섹션 */
+.development-section {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.graph-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px;
+}
+
+.pie-chart {
+    flex: 0 0 400px;
+    height: 400px;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.pie-segment {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+    transition: transform 0.3s ease;
+}
+
+.segment1 {
+    clip-path: circle(100% at 50% 50%);
+    background: conic-gradient(#7C96AB 0deg 90deg, transparent 90deg 360deg);
+    z-index: 1;
+}
+
+.segment2 {
+    clip-path: circle(100% at 50% 50%);
+    background: conic-gradient(transparent 0deg 90deg, #BFCCB5 90deg 234deg, transparent 234deg 360deg);
+    z-index: 2;
+}
+
+.segment3 {
+    clip-path: circle(100% at 50% 50%);
+    background: conic-gradient(transparent 0deg 234deg, #E3B7A0 234deg 288deg, transparent 288deg 360deg);
+    z-index: 3;
+}
+
+.segment4 {
+    clip-path: circle(100% at 50% 50%);
+    background: conic-gradient(transparent 0deg 288deg, #B7B7B7 288deg 324deg, transparent 324deg 360deg);
+    z-index: 4;
+}
+
+.segment5 {
+    clip-path: circle(100% at 50% 50%);
+    background: conic-gradient(transparent 0deg 324deg, #D7C0AE 324deg 360deg);
+    z-index: 5;
+}
+
+.pie-segment:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.tooltip {
+    position: fixed;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1000;
+    white-space: nowrap;
+    transform: translate(-50%, -100%);
+    margin-top: -10px;
+}
+
+/* 범례 상자 제거 */
+.graph-legend {
+    display: none;
+}
+
+.pie-label {
+    position: absolute;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #333;
+    width: 120px;
+    transform-origin: center;
+    white-space: nowrap;
+}
+
+/* C언어 (25%) - 45도 위치 */
+.label-1 {
+    top: 25%;
+    left: 60%;
+    transform: rotate(0deg);
+}
+
+/* 토익영어공부 (40%) - 162도 위치 */
+.label-2 {
+    top: 50%;
+    left: 60%;
+    transform: rotate(0deg);
+}
+
+/* JavaScript (15%) */
+.label-3 {
+    top: 70%;
+    left: 25%;
+    transform: rotate(0deg);
+}
+
+/* 프로그래밍 이론 (10%) */
+.label-4 {
+    top: 45%;
+    left: 15%;
+    transform: rotate(0deg);
+}
+
+/* 프로그래밍 실습 (10%) */
+.label-5 {
+    top: 20%;
+    left: 15%;
+    transform: rotate(0deg);
+}
+
+.pie-label span {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* 각 라벨에 선 추가 */
+.pie-label::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    background-color: #999;
+    left: 50%;
+    bottom: 100%;
+    margin-bottom: 5px;
+}
+
+.graph-legend {
+    margin-top: 30px;
+}
+
+.legend-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.color1 { background-color: #7C96AB; }
+.color2 { background-color: #BFCCB5; }
+.color3 { background-color: #E3B7A0; }
+.color4 { background-color: #B7B7B7; }
+.color5 { background-color: #D7C0AE; }
+
+.legend-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-title {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.legend-percent {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.graph-description {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.graph-description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 목표 섹션 */
+.goals-section {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.goals-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.game-cards {
+    flex: 0 0 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-card {
+    flex: 0 0 400px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.game-description {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.game-description h3 {
+    font-size: 1.0rem;
+    margin-bottom: 15px;
+    color: #222222;
+}
+
+.game-description p {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.goals-description {
+    flex: 1;
+}
+
+.goals-description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.goal-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+    padding-left: 20px;
+    position: relative;
+}
+
+.goal-text p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background-color: #666;
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .goals-container {
+        flex-direction: column;
+    }
+
+    .game-cards {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .graph-container {
+        flex-direction: column;
+    }
+
+    .pie-chart {
+        flex: none;
+        width: 300px;
+        height: 300px;
+    }
+
+    .game-cards {
+        flex-direction: column;
+    }
+}
+
+.development-description {
+    flex: 1;
+    padding: 20px;
+}
+
+.development-description h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.development-description h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #7C96AB;
+}
+
+.description-box {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.description-box p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.description-box p:last-child {
+    margin-bottom: 0;
+}
+
+.description-box p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background-color: #7C96AB;
+    border-radius: 50%;
+} 

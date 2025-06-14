@@ -1,0 +1,77 @@
+body {
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+.intro-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.intro-container h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #444;
+  font-weight: 700;
+}
+
+.intro-features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.feature {
+  flex: 1;
+  background: #f9f9f9;
+  border-radius: 18px;
+  padding: 70px 64px 50px 34px;
+  min-height: 320px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.feature:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.feature-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 18px;
+}
+
+.feature h2 {
+  font-size: 1.2rem;
+  color: #1a9bdc;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.feature p, ul {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 18px;
+}
+.feature-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a9bdc;
+  margin: 18px 0 8px 0;
+  text-align: left;
+}

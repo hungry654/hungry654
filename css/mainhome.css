@@ -1,0 +1,343 @@
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
+  background: #fff;
+  color: #222;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 40px 0 40px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+}
+nav a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 700;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  transition: color 0.2s;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: #1251a3;
+}
+.main-visual {
+  background: linear-gradient(to bottom, #aad6e6 0%, #e3f4fb 100%);
+  border-radius: 0 0 80px 0;
+  padding: 120px 0 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+  min-height: 400px;
+  margin-bottom: 0;
+}
+
+.main-visual h2,
+.main-visual h1,
+.main-visual p,
+.main-visual .dot {
+  position: relative;
+  z-index: 10;
+}
+
+.main-visual .dot {
+  margin: 0 auto 16px auto;
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-visual .dot span {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #5ebdd7;
+  display: inline-block;
+}
+
+.main-visual h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.1em;
+}
+
+.main-visual h1 {
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+.main-visual p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+.stats div {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 16px 24px;
+  min-width: 200px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.stats div:hover {
+  box-shadow: 0 4px 16px rgba(38,117,209,0.10);
+  transform: translateY(-4px) scale(1.03);
+}
+.stats span {
+  display: block;
+  font-size: 1.5rem;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.stats strong {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* project 영역 전체를 감싸는 섹션 배경 */
+.project-section {
+  background: #181818;
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+}
+
+#tree-container {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  left: 0;
+  bottom: -300px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.branch {
+  position: absolute;
+  background-color: #000;
+  transform-origin: bottom center;
+  animation: growBranch 0.5s ease-out forwards;
+  z-index: 0;
+}
+
+.branch.trunk {
+  width: 4px;
+  background-color: #000;
+}
+
+.branch.level-1 {
+  width: 3px;
+  background-color: #000;
+}
+
+.branch.level-2 {
+  width: 2px;
+  background-color: #5b0d54;
+}
+
+.branch.level-3 {
+  width: 1px;
+  background-color: #7b266e;
+}
+
+.branch.level-4 {
+  width: 1px;
+  background-color: #a73393;
+}
+
+.branch.level-5 {
+  width: 1px;
+  background-color: #eb4ad3;
+}
+
+@keyframes growBranch {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.project {
+  background: transparent;
+  color: #fff;
+  padding: 48px 0 0 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 이미지 슬라이더 영역도 project-section 안에 들어가야 함 */
+.image-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  position: static;
+  background: transparent;
+  overflow-x: hidden;
+  min-width: 0;
+  max-width: 1080px;
+}
+.slider-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  cursor: pointer;
+  z-index: 20;
+  transition: background 0.2s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.slider-btn.left {
+  left: 16px;
+}
+.slider-btn.right {
+  right: 16px;
+}
+.slider-btn:hover {
+  background: #6ac5df;
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  width: 100%;
+  justify-content: flex-start;
+  background: transparent;
+  padding: 0;
+}
+.slider-item {
+  min-width: 500px;
+  max-width: 500px;
+  flex-shrink: 0;
+  min-height: 400px;
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  text-align: center;
+  padding: 24px 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+  border-radius: 18px;
+  margin-bottom: 8px;
+  background: #f4f4f4;
+}
+.slider-item p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.slider-item:last-child {
+  border-top-right-radius: 48px;
+  border-bottom-right-radius: 48px;
+}
+@media (max-width: 1100px) {
+  .slider-track {
+    width: 98vw;
+  }
+  .slider-item {
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 48vw;
+  }
+  .slider-item img {
+    height: 36vw;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 16px 0 16px;
+  }
+  nav {
+    margin-top: 12px;
+  }
+  .main-visual {
+    padding: 40px 0 24px 0;
+    border-radius: 0 0 40px 0;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .about, .work {
+    padding: 32px 0;
+  }
+}
+.work-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+.work-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 24px 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 260px;
+}
+.work-box img {
+  width: 220px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+.work {
+  padding: 48px 0;
+  text-align: center;
+  background: #d0edf8;
+}
+.work h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Pretendard', sans-serif;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.text {
+  font-size: 3em;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.click-box {
+  display: none;
+  margin-top: 20px;
+  padding: 30px 40px;
+  border: 10px solid white;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* 🪄 Curtain Effect */
+.curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.panel {
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* 커튼 열림 (왼쪽 → 왼쪽으로 사라짐, 오른쪽 → 오른쪽으로 사라짐) */
+.curtain.open .left {
+  transform: translateX(-100%);
+}
+
+.curtain.open .right {
+  transform: translateX(100%);
+}
