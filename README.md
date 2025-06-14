@@ -1,8 +1,8 @@
 ## README 설명
 - github 링크
- - https://github.com/hungry654/hungry654.github.io.git
+- https://github.com/hungry654/hungry654.github.io.git
 - 홈페이지 링크
- -  https://hungry654.github.io/
+- https://hungry654.github.io/
 #### 과제 설명
 - 제작자: 20253043 하가인
 - 포트폴리오 형식의 홈페이지 만들기
